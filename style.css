@@ -1,0 +1,69 @@
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.left {
+  clear: left;
+  float: left;
+}
+
+.right {
+  clear: right;
+  float: right;
+}
+
+#start,
+#move,
+#end {
+  font-size: 50px;
+  color: rgba(0,0,0, 0.3);
+  -moz-transition: all 1s; 
+  -webkit-transition: all 1s;  
+  -ms-transition: all 1s;  
+  -o-transition: all 1s;  
+  transition: all 1s; 
+}
+
+#start.fired,
+#move.fired,
+#end.fired {
+  color: rgba(0,0,0, 1);
+  -moz-transition: none; 
+  -webkit-transition: none;  
+  -ms-transition: none;  
+  -o-transition: none;  
+  transition: none; 
+}
+
+.touch {
+  color: white;
+  background-color: black;
+  position: absolute;
+  height: 88px;
+  width: 88px;
+  border-radius: 50%;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+  font-size: 70px;
+}
+
+.nav {
+  padding: 0;
+}
+
+.nav li,
+.nav a {
+  display: block;
+}
+
+.nav a {
+  background-color: #EFEFEF;
+  color: black;
+  padding: 10px 0;
+  margin: 10px 0;
+  text-decoration: none;
+}

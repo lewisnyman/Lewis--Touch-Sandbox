@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Lewis' Touch Sandbox</title>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../style.css" type="text/css" media="screen" />
+<script type="text/javascript" language="Javascript">
+
+function touching(event) {
+  var x = document.getElementById('x');
+  var y = document.getElementById('y');
+  var number = document.getElementById('number');
+  event.preventDefault();
+  x.innerHTML = event.touches[0].clientX +'px';
+  y.innerHTML = event.touches[0].clientY +'px';
+  number.innerHTML = event.touches.length;
+} 
+
+// add event listeners
+if (document.addEventListener) {
+  document.addEventListener('touchstart', touching, false);
+  document.addEventListener('touchmove', touching, false);
+  document.addEventListener('touchend', touching, false);
+}
+
+</script>
+</head>
+<body>
+<h1 class="left">X:</h1>
+<h1 id="x" class="right"></h1>
+<h1 class="left">Y:</h1>
+<h1 id="y" class="right"></h1>
+<h1 class="left">#:</h1>
+<h1 id="number" class="right"></h1>
+
+</body>
+</html>

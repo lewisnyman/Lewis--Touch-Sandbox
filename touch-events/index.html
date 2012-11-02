@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Lewis' Touch Sandbox</title>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../style.css" type="text/css" media="screen" />
+<script type="text/javascript" language="Javascript">
+
+function onTouchStart(event) {
+  var start = document.getElementById('start');
+  console.log(event);
+  event.preventDefault();
+  fireAndFade(start);
+} 
+
+function onTouchMove(event) {
+  var move = document.getElementById('move');
+  console.log(event);
+  event.preventDefault();
+  fireAndFade(move);
+} 
+
+function onTouchEnd(event) {
+  var end = document.getElementById('end');
+  console.log(event);
+  event.preventDefault();
+  fireAndFade(end);
+} 
+
+function fireAndFade(element) {
+  element.className = 'fired';
+  setTimeout(function() { 
+    element.className = '';
+  }, 100)
+}
+
+// add event listeners
+if (document.addEventListener) {
+  document.addEventListener('touchstart', onTouchStart, false);
+  document.addEventListener('touchmove', onTouchMove, false);
+  document.addEventListener('touchend', onTouchEnd, false);
+}
+
+</script>
+</head>
+<body>
+<h1 id="start">Start</h1>
+<h1 id="move">Move</h1>
+<h1 id="end">End</h1>
+</body>
+</html>
